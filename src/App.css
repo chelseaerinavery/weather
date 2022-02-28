@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-width: 100%;
 }
 
 .App-logo {
@@ -25,14 +26,13 @@
 }
 
 .City-name {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 
 .Color-bold {
-  color: #C2A640;
+  color: #c2a640;
   font-weight: bold;
 }
-
 
 .App-link {
   color: #61dafb;
@@ -47,11 +47,47 @@
   }
 }
 
-
-.Weather-card {
+/* .Weather-card {
   background-color: white;
   color: black;
-  padding: 20px;
-  border-radius: 8%;
-  box-shadow: 0 0 20px #000000;
+  width: 100%;
+  padding-left: 10%;
+} */
+
+.Forecast-card {
+  background-color: white;
+  color: black;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  border-top: 1px solid;
+}
+
+.Forecast-card > span {
+  font-size: 2vh;
+  margin-right: 100px;
+  padding-left: 4em;
+  padding-bottom: 1em;
+}
+
+.Forecast-card > img {
+  display: flex;
+  align-items: baseline;
+}
+
+.Forecast-card > h3 {
+  color: #c2a640;
+}
+
+.Forecast-card-container {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  flex-flow: column;
+}
+
+#greeting {
+  font-family: "Oswald", sans-serif;
+  font-size: 5vmin;
 }

@@ -1,12 +1,14 @@
 //import logo from './logo.svg';
 import globe from './globe.png';
 import './App.css';
-import {getWeatherRequest,getWeatherRequestZip} from '../src/requests/main.js';
+import {getWeatherRequest,getWeatherRequestZip,getForecastRequestZip} from '../src/requests/main.js';
 import { useState, useEffect } from 'react';
 import Card from './components/Card';
+import ForecastCard from './components/ForecastCard';
 
 function App() {
  const [weather, setWeather] = useState(null);
+ const [forecast, setForecast] = useState(null);
  const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
@@ -21,9 +23,11 @@ function App() {
   });
 
 const searchZip = async () => {
-  console.log(keyword, 'keyword')
-  var res = await getWeatherRequestZip(keyword)
-  setWeather(res)
+  var res = await getForecastRequestZip(keyword)
+  setForecast(res)
+  // if (!keyword) {
+    
+  // }
 }
 
 
@@ -41,12 +45,23 @@ const searchZip = async () => {
 
       <img src={globe} className="App-logo" alt="logo" />
       
-      {weather && <Card weather={weather}/>}
+      {weather && !forecast && <Card weather={weather}/>}
 
+      <h1 className="City-name">{forecast?.city.name}</h1>
+      <div className="Forecast-card-container">
+      {forecast && forecast.list.map((f,i) => {
+        if (i<9) {
+          return <ForecastCard weather={f} city={forecast.city}/>
+        }
+        return null;
+      })}
+      </div>
       </header>
     </div>
   );
 }
 
 export default App;
+
+
 
