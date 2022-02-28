@@ -24,12 +24,12 @@ function App() {
 
 const searchZip = async () => {
   var res = await getForecastRequestZip(keyword)
-  setForecast(res)
-  // if (!keyword) {
-    
-  // }
+  if (res.cod >= '400') {
+    alert("Please type a valid zip code.")
+  } else {
+    setForecast(res)
+  }
 }
-
 
   return (
     <div className="App">
