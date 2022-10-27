@@ -92,4 +92,8 @@ body {
   .Forecast-card {
     font-size: 1em;
   }
+
+  .Forecast-card img {
+    width: 4%;
+  }
 }
