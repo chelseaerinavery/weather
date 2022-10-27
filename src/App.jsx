@@ -1,26 +1,13 @@
 //import logo from './logo.svg';
 import globe from './globe.png';
 import './App.css';
-import {getWeatherRequest,getWeatherRequestZip,getForecastRequestZip} from '../src/requests/main.js';
-import { useState, useEffect } from 'react';
-import Card from './components/Card';
+import {getForecastRequestZip} from '../src/requests/main.js';
+import { useState } from 'react';
 import ForecastCard from './components/ForecastCard';
 
 function App() {
- const [weather, setWeather] = useState(null);
  const [forecast, setForecast] = useState(null);
  const [keyword, setKeyword] = useState('');
-
-  useEffect(() => {
-    const getWeather = async () => {
-    const res = await getWeatherRequestZip(80302) 
-    setWeather(res)
-    }
-    if (!weather) {
-      getWeather()
-    }
-
-  });
 
 const searchZip = async () => {
   var res = await getForecastRequestZip(keyword)
@@ -34,9 +21,8 @@ const searchZip = async () => {
   return (
     <div className="App">
       <header className="App-header"> 
-      <div>
+      <div id="Search">
       <input 
-       // value={keyword}
         placeholder={"search zip code"}
         onChange={(e) => setKeyword(e.target.value)}
       /> 
@@ -45,9 +31,10 @@ const searchZip = async () => {
 
       <img src={globe} className="App-logo" alt="logo" />
       
-      {weather && !forecast && <Card weather={weather}/>}
+      {!forecast && <span><p id="Greeting">Enter a zip code to receive a forecast detailing weather every 3 hours for the next 24 hours.</p></span>}
 
       <h1 className="City-name">{forecast?.city.name}</h1>
+      </header>
       <div className="Forecast-card-container">
       {forecast && forecast.list.map((f,i) => {
         if (i<9) {
@@ -56,7 +43,7 @@ const searchZip = async () => {
         return null;
       })}
       </div>
-      </header>
+      
     </div>
   );
 }

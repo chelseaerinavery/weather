@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function ForecastCard(props) {
 
-const {weather, city} = props;
+const {weather} = props;
 
-console.log(weather);
 return (
     
     <div className='Forecast-card'>

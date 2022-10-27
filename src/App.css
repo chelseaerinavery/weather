@@ -1,10 +1,12 @@
-.App {
-  text-align: center;
-  min-width: 100%;
+html, 
+body { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #357a71;
 }
 
 .App-logo {
-  height: 40vmin;
+  width: 180px;
   pointer-events: none;
 }
 
@@ -15,27 +17,24 @@
 }
 
 .App-header {
-  background-color: #357a71;
-  min-height: 100vh;
+  min-height: 25vh;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .City-name {
   font-family: "Pacifico", cursive;
+  margin: 2%;
 }
 
 .Color-bold {
   color: #c2a640;
   font-weight: bold;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -47,47 +46,50 @@
   }
 }
 
-/* .Weather-card {
-  background-color: white;
-  color: black;
-  width: 100%;
-  padding-left: 10%;
-} */
-
 .Forecast-card {
   background-color: white;
   color: black;
-  width: 100%;
-  display: flex;
-  align-items: baseline;
   border-top: 1px solid;
-}
-
-.Forecast-card > span {
-  font-size: 2vh;
-  margin-right: 100px;
-  padding-left: 4em;
-  padding-bottom: 1em;
-}
-
-.Forecast-card > img {
   display: flex;
-  align-items: baseline;
+  font-size: .8em;
+  width:100%;
 }
 
-.Forecast-card > h3 {
-  color: #c2a640;
+.Forecast-card * {
+  padding: 1.25%;
+  width: 20%;
+}
+
+.Forecast-card img {
+  padding: 1.25%;
+  width: 8%;
 }
 
 .Forecast-card-container {
   background-color: white;
   display: flex;
   width: 100%;
-  text-align: left;
-  flex-flow: column;
+  flex-wrap: wrap;
 }
 
-#greeting {
+#Greeting {
   font-family: "Oswald", sans-serif;
-  font-size: 5vmin;
+  font-size: 30px;
+  padding: 3%;
+    text-align: center;
+}
+
+#Search {
+  margin: 3%;
+}
+
+@media only screen and (min-width: 800px) {
+  
+  .App-logo {
+    width: 180px;
+  }
+
+  .Forecast-card {
+    font-size: 1em;
+  }
 }
