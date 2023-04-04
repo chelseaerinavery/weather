@@ -1,35 +1,52 @@
-html, 
-body { 
+/* main */
+
+html,
+body {
   width: 100vw;
   min-height: 100vh;
-  background-color: #357a71;
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  width: 180px;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 5s linear;
-  }
+.App {
+  display: flex;
 }
 
 .App-header {
-  min-height: 25vh;
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
   width: 100%;
-  align-items: center;
+  height: 30vh;
+  background-color: rgb(74 70 70 / 81%);
+  display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  justify-content: center;
+}
+
+#Greeting-video {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#Greeting {
+  font-size: 20px;
   color: white;
 }
 
+#Search {
+  margin: 3%;
+}
+
+/*forecast-display*/
+
 .City-name {
-  font-family: "Pacifico", cursive;
-  margin: 2%;
+  font-size: 20px;
+  color: white;
 }
 
 .Color-bold {
@@ -37,22 +54,19 @@ body {
   font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
 .Forecast-card {
   background-color: white;
   color: black;
   border-top: 1px solid;
   display: flex;
-  font-size: .8em;
-  width:100%;
+  font-size: 14px;
+  width: 100%;
+}
+
+#Forecast-video {
+  height: 30vh;
+  object-fit: cover;
+  width: 100%;
 }
 
 .Forecast-card * {
@@ -62,7 +76,7 @@ body {
 
 .Forecast-card img {
   padding: 1.25%;
-  width: 8%;
+  width: 2.5em;
 }
 
 .Forecast-card-container {
@@ -70,30 +84,60 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  position: absolute;
+  top: 30vh;
 }
 
-#Greeting {
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-  padding: 3%;
-    text-align: center;
+/* tablet */
+
+@media only screen and (max-width: 950px) {
+  .City-name {
+    font-size: 30px;
+    color: white;
+  }
+
 }
 
-#Search {
-  margin: 3%;
-}
+/* mobile */
 
-@media only screen and (min-width: 800px) {
-  
-  .App-logo {
-    width: 180px;
+@media only screen and (max-width: 450px) {
+  .City-name {
+    font-size: 20px;
+    color: white;
   }
 
   .Forecast-card {
-    font-size: 1em;
+    font-size: 12px;
+  }
+
+  #Greeting {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px;
+  }
+}
+
+/* narrow-mobile */
+
+@media only screen and (max-width: 300px) {
+  .City-name {
+    font-size: 16px;
+    color: white;
   }
 
   .Forecast-card img {
-    width: 4%;
+    display: none;
+  }
+
+  #Greeting {
+    font-size: 12px;
+    text-align: center;
+    margin: 10px;
+  }
+
+  .Forecast-card {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-around;
   }
 }
