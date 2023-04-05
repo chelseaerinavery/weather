@@ -1,1 +1,1 @@
-This is a basic weather app - search by zip code to find the current weather around the world.
+This is a basic weather app - search by zip code to find the weather forecast around the world.
