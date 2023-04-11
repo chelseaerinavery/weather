@@ -17,6 +17,12 @@ function App() {
     }
   }
 
+  const checkKeyPress = (e) => {
+    if (e.key === "Enter") {
+      searchZip();
+    }
+  };
+
   return (
     <div className="App">
       <video id={forecast ? "Forecast-video" : "Greeting-video"} src={videoBg} autoPlay loop muted />
@@ -25,6 +31,7 @@ function App() {
           <input
             placeholder={"search zip code"}
             onChange={(e) => setKeyword(e.target.value)}
+            onKeyDown={checkKeyPress}
           />
           <button onClick={searchZip}>Search</button>
         </div>
