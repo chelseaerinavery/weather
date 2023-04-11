@@ -48,7 +48,6 @@ One of the main challenges I ran into was effectively styling the forecast displ
                                                     
      
 --Chelsea Avery--    
-  
 📫 chelseaavery.js@gmail.com    
 🐙 https://github.com/chelseaerinavery     
 💼 https://www.linkedin.com/in/chelseaavery/     
