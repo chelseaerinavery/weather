@@ -51,4 +51,4 @@ One of the main challenges I ran into was effectively styling the forecast displ
 📫 chelseaavery.js@gmail.com    
 🐙 https://github.com/chelseaerinavery     
 💼 https://www.linkedin.com/in/chelseaavery/     
-👩‍💻 [chelsea-avery.netlify.app](chelsea-avery.netlify.app)    
+👩‍💻 [www.chelsea-avery.com](www.chelsea-avery.com)    
